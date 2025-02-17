@@ -98,5 +98,6 @@ pub async fn get_jwt_token() -> io::Result<String> {
     );
     let mut str = String::new();
     io::stdin().read_line(&mut str)?;
-    Ok(str)
+    // 清理输入字符串，移除首尾的空白字符（包括换行符、空格等）
+    Ok(str.trim().to_string())
 }
