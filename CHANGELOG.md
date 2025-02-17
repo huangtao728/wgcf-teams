@@ -15,3 +15,8 @@ Include license in release artifacts.
 
 - Updated dependencies
 - Bug fixes
+
+# 0.2.2
+
+- Fix: Do nothing after typing JWT
+- Support providing device name when register
