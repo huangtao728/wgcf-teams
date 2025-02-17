@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
     let client = build_client()
         .await
         .context("Failed to build reqwest client")?;
-    let reg = Registration::new(privkey);
+    let reg = Registration::new(privkey, arg.device_name);
     let req = client
         .post(API_ENDPOINT)
         .json(&reg)

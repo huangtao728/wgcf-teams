@@ -28,16 +28,18 @@ pub struct Registration {
     pubkey: Pubkey,
     tos: DateTime<Local>,
     model: String,
+    name: String, // 新增字段
     fcm_token: String,
     device_token: String,
 }
 
 impl Registration {
-    pub fn new(privkey: Privkey) -> Self {
+    pub fn new(privkey: Privkey, device_name: String) -> Self { // 修改构造函数
         Registration {
             pubkey: privkey.pubkey(),
             tos: Local::now(),
             model: String::from("iPad13,8"),
+            name: device_name,
             fcm_token: String::new(),
             device_token: String::new(),
         }

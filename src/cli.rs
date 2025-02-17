@@ -1,10 +1,13 @@
 use argh::FromArgs;
 
 #[derive(FromArgs)]
-/// Generate wireguard config for WARP for teams
+/// Generate WireGuard profile for WARP Teams
 pub struct Args {
-    #[argh(switch, short = 'p')]
-    /// whether to prompt for wireguard private key instead of
-    /// randomly generating one
+    /// read private key from stdin instead of generating a new one
+    #[argh(switch)]
     pub prompt: bool,
+
+    /// device name to register with
+    #[argh(option, short = 'n', default = "String::from(\"wgcf-teams-device\")")]
+    pub device_name: String,
 }

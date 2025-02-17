@@ -2,6 +2,15 @@
 
 Extract wireguard configurations from cloudflare's warp for teams
 
+## Usage
+```
+wgcf-teams
+```
+If you want to specify a device name, use `-n` or `--device-name`:
+```
+wgcf-teams --device-name "My Laptop"
+```
+
 ## Installing
 
 ### Using Nix
